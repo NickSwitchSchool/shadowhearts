@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 649556363}
   - component: {fileID: 649556364}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649556358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 1, z: 10}
+  m_LocalPosition: {x: 10, y: 0.78, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 72315770}
@@ -350,7 +350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7c856608448c641902f64b8f3e4db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVelocity: 10
+  moveVelocity: 7
+  dodgePower: 300
+  timer: 1
   playerRb: {fileID: 649556364}
   grounded: 0
   jumpHeight: 300
@@ -368,7 +370,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1 &1410137011
 GameObject:
@@ -383,7 +385,7 @@ GameObject:
   - component: {fileID: 1410137012}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -674,7 +676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821528567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 1, z: 20}
+  m_LocalPosition: {x: 20, y: 3.17, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
