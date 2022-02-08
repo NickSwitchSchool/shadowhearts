@@ -7,6 +7,10 @@ public class BatAI : MonoBehaviour
 {
     public Transform goal;
 
+    public GameObject bat;
+
+    public Vector3 pos;
+
     public RaycastHit inRange;
 
     public float speedBat;
@@ -14,7 +18,6 @@ public class BatAI : MonoBehaviour
     public float hitDuration;
     public float attackDelay;
     public float attackRange;
-    public float height;
 
     public int attack;
     public int damageDealt;
@@ -30,7 +33,8 @@ public class BatAI : MonoBehaviour
     void Update()
     {
         //navigation, this makes the bat move towards the player
-        transform.LookAt(goal); 
+        transform.LookAt(goal);
+        pos = transform.position;
         if (Physics.Raycast(transform.position, transform.forward, out inRange, attackRange))
         {
             if (inRange.transform.tag == "Player")
@@ -60,10 +64,17 @@ public class BatAI : MonoBehaviour
             agent.speed = speedBat;
         }
 
-        if (attack >= 20 && attack <= 100)
+        if (attack >= 21 && attack <= 90)
         {
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             agent.speed = hitSpeed;
+        }
+
+        //Here comes a different attack later
+        if (attack >= 91)
+        {
+            Instantiate(bat, pos, Quaternion.identity);
+            attack = 0;
         }
     }
 
