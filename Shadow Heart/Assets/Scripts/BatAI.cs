@@ -8,6 +8,7 @@ public class BatAI : MonoBehaviour
     public Transform goal;
 
     public GameObject bat;
+    public GameObject newBat;
 
     public Vector3 pos;
 
@@ -27,6 +28,7 @@ public class BatAI : MonoBehaviour
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.speed = speedBat;
+        attack = 0;
     }
 
     // Update is called once per frame
@@ -73,8 +75,11 @@ public class BatAI : MonoBehaviour
         //Here comes a different attack later
         if (attack >= 91)
         {
-            Instantiate(bat, pos, Quaternion.identity);
-            attack = 0;
+            for (int i = 0; i < 1; i++)
+            {
+                Instantiate(newBat, pos, Quaternion.identity);
+                attack = 0;
+            }
         }
     }
 
