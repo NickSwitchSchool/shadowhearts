@@ -11,8 +11,10 @@ public class BatAI : MonoBehaviour
     public GameObject newBat;
 
     public Vector3 pos;
+    public Vector3 flyUp;
 
     public RaycastHit inRange;
+    public RaycastHit fly;
 
     public float speedBat;
     public float hitSpeed;
@@ -66,20 +68,24 @@ public class BatAI : MonoBehaviour
             agent.speed = speedBat;
         }
 
-        if (attack >= 21 && attack <= 90)
+        if (attack >= 21 && attack <= 96)
         {
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             agent.speed = hitSpeed;
         }
 
-        //Here comes a different attack later
-        if (attack >= 91)
+        if (attack >= 97)
         {
             for (int i = 0; i < 1; i++)
             {
                 Instantiate(newBat, pos, Quaternion.identity);
                 attack = 0;
             }
+        }
+
+        if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
+        {
+            GetComponent<Transform>().position += flyUp;
         }
     }
 
