@@ -19,6 +19,7 @@ public class BatAI : MonoBehaviour
     public RaycastHit fly;
 
     public float speedBat;
+    public float rotationSpeed;
     public float hitSpeed;
     public float hitDuration;
     public float attackDelay;
@@ -40,7 +41,7 @@ public class BatAI : MonoBehaviour
     {
         //navigation, this makes the bat move towards the player
         targetDirection = goal.position - transform.position;
-        direction = Vector3.RotateTowards(transform.forward, targetDirection, speedBat * Time.deltaTime, 0.0f);
+        direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(direction);
         pos = transform.position;
         if (Physics.Raycast(transform.position, transform.forward, out inRange, attackRange))
