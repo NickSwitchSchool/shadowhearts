@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4456146611482555057}
   - component: {fileID: 4456146611482555056}
   - component: {fileID: 4456146611482555071}
-  - component: {fileID: 4456146611482555059}
   - component: {fileID: 4456146611482555060}
+  - component: {fileID: 121882303586327815}
+  - component: {fileID: 8188675016903938512}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,24 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4456146611482555059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4456146611482555070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7c856608448c641902f64b8f3e4db6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveVelocity: 7
-  dodgePower: 300
-  timer: 1
-  playerRb: {fileID: 4456146611482555060}
-  grounded: 0
-  jumpHeight: 300
 --- !u!54 &4456146611482555060
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,6 +115,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &121882303586327815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456146611482555070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7c856608448c641902f64b8f3e4db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveVelocity: 0
+  dodgePower: 0
+  timer: 0
+  playerRb: {fileID: 4456146611482555060}
+  grounded: 0
+  jumpHeight: 300
+--- !u!114 &8188675016903938512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456146611482555070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boost: 3.5
+  positionLerpTime: 0.2
+  mouseSensitivity: 60
+  mouseSensitivityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationLerpTime: 0.01
+  invertY: 0
 --- !u!1 &4456146612053504079
 GameObject:
   m_ObjectHideFlags: 0

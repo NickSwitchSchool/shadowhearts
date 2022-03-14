@@ -44,13 +44,11 @@ public class BatAI : MonoBehaviour
         direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(direction);
         pos = transform.position;
-        if (Physics.Raycast(transform.position, transform.forward, out inRange, attackRange))
+        float distance = Vector3.Distance(transform.position, goal.position);
+        if (distance < attackRange)
         {
-            if (inRange.transform.tag == "Player")
-            {
-                NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                agent.destination = goal.position;
-            }
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.destination = goal.position;
         }
 
         //attack, every 3 seconds the bat does a random attack or just nothing
