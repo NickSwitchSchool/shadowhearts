@@ -54,49 +54,56 @@ public class BatAI : MonoBehaviour
         //attack, every 3 seconds the bat does a random attack or just nothing
         attackDelay += Time.deltaTime;
 
-        if (attackDelay >= 0.7f)
+        if (attackDelay >= 4)
         {
-            attack = 0;
-        }
-
-        if (attackDelay >= 3)
-        {
-            attack = Random.Range(0, 99);
+            attack = Random.Range(1, 100);
             attackDelay = 0;
         }
 
-        if (attack <= 20)
-        {
-            NavMeshAgent agent = GetComponent<NavMeshAgent>();
-            agent.speed = speedBat;
-        }
+        //Old code
+    //    if (attackDelay >= 0.7f)
+    //    {
+    //        attack = 0;
+    //    }
 
-        if (attack >= 21 && attack <= 96)
-        {
-            NavMeshAgent agent = GetComponent<NavMeshAgent>();
-            agent.speed = hitSpeed;
-        }
+    //    if (attackDelay >= 3)
+    //    {
+    //        attack = Random.Range(0, 99);
+    //        attackDelay = 0;
+    //    }
 
-        if (attack >= 97)
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                Instantiate(newBat, pos, Quaternion.identity);
-                attack = 0;
-            }
-        }
+    //    if (attack <= 20)
+    //    {
+    //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+    //        agent.speed = speedBat;
+    //    }
 
-        if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
-        {
-            GetComponent<Transform>().position += flyUp;
-        }
-    }
+    //    if (attack >= 21 && attack <= 96)
+    //    {
+    //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+    //        agent.speed = hitSpeed;
+    //    }
 
-    private void OnCollisionEnter(Collision playerHit)
-    {
-        if (playerHit.gameObject.tag == "Player")
-        {
-            damageDealt = 7;
-        }
+    //    if (attack >= 97)
+    //    {
+    //        for (int i = 0; i < 1; i++)
+    //        {
+    //            Instantiate(newBat, pos, Quaternion.identity);
+    //            attack = 0;
+    //        }
+    //    }
+
+    //    if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
+    //    {
+    //        GetComponent<Transform>().position += flyUp;
+    //    }
+    //}
+
+    //private void OnCollisionEnter(Collision playerHit)
+    //{
+    //    if (playerHit.gameObject.tag == "Player")
+    //    {
+    //        damageDealt = 7;
+    //    }
     }
 }
