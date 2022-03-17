@@ -64,6 +64,17 @@ public class BatAI : MonoBehaviour
             flyUp.y += Time.deltaTime;
         }
 
+        if (attackDelay >= 5 && attackDelay <= 7 && attack <= 97)
+        {
+            flyUp.y -= Time.deltaTime / 2;
+        }
+
+        if (attackDelay >= 7 && attack <= 97)
+        {
+            attackDelay = 0;
+            attack = 0;
+        }
+
         //Old code
     //    if (attackDelay >= 0.7f)
     //    {
@@ -97,11 +108,10 @@ public class BatAI : MonoBehaviour
     //        }
     //    }
 
-    //    if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
-    //    {
-    //        GetComponent<Transform>().position += flyUp;
-    //    }
-    //}
+        if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
+        {
+                GetComponent<Transform>().position += flyUp;
+        }
 
     //private void OnCollisionEnter(Collision playerHit)
     //{
@@ -109,5 +119,6 @@ public class BatAI : MonoBehaviour
     //    {
     //        damageDealt = 7;
     //    }
+    //}
     }
 }
