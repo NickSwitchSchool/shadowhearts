@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528224761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 436, y: 118, z: 239}
+  m_LocalPosition: {x: 459.8, y: 28.629, z: 331.8393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bat
       objectReference: {fileID: 0}
+    - target: {fileID: 8560558028817130311, guid: 3e6eb9e9ec3d9f545b2bf897c8a3ae6f, type: 3}
+      propertyPath: goal
+      value: 
+      objectReference: {fileID: 1628871436}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e6eb9e9ec3d9f545b2bf897c8a3ae6f, type: 3}
 --- !u!1 &1628871433
@@ -406,7 +410,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!154 &1628871434
 TerrainCollider:
