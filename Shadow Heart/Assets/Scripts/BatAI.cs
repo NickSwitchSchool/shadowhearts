@@ -73,40 +73,48 @@ public class BatAI : MonoBehaviour
         {
             attackDelay = 0;
             attack = 0;
+            damageDealt = 0;
+        }
+
+        if (attackDelay >= 4 && attack >= 98)
+        {
+            Instantiate(newBat, pos, Quaternion.identity);
+            attackDelay = 0;
+            attack = 0;
         }
 
         //Old code
-    //    if (attackDelay >= 0.7f)
-    //    {
-    //        attack = 0;
-    //    }
+        //    if (attackDelay >= 0.7f)
+        //    {
+        //        attack = 0;
+        //    }
 
-    //    if (attackDelay >= 3)
-    //    {
-    //        attack = Random.Range(0, 99);
-    //        attackDelay = 0;
-    //    }
+        //    if (attackDelay >= 3)
+        //    {
+        //        attack = Random.Range(0, 99);
+        //        attackDelay = 0;
+        //    }
 
-    //    if (attack <= 20)
-    //    {
-    //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-    //        agent.speed = speedBat;
-    //    }
+        //    if (attack <= 20)
+        //    {
+        //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        //        agent.speed = speedBat;
+        //    }
 
-    //    if (attack >= 21 && attack <= 96)
-    //    {
-    //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-    //        agent.speed = hitSpeed;
-    //    }
+        //    if (attack >= 21 && attack <= 96)
+        //    {
+        //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        //        agent.speed = hitSpeed;
+        //    }
 
-    //    if (attack >= 97)
-    //    {
-    //        for (int i = 0; i < 1; i++)
-    //        {
-    //            Instantiate(newBat, pos, Quaternion.identity);
-    //            attack = 0;
-    //        }
-    //    }
+        //    if (attack >= 97)
+        //    {
+        //        for (int i = 0; i < 1; i++)
+        //        {
+        //            Instantiate(newBat, pos, Quaternion.identity);
+        //            attack = 0;
+        //        }
+        //    }
 
         if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
         {
@@ -120,5 +128,13 @@ public class BatAI : MonoBehaviour
     //        damageDealt = 7;
     //    }
     //}
+    }
+
+    private void OnCollisionEnter(Collision playerHit)
+    {
+        if (playerHit.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5)
+        {
+            damageDealt = 7;
+        }
     }
 }
