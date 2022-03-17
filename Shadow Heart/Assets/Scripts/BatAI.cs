@@ -54,10 +54,14 @@ public class BatAI : MonoBehaviour
         //attack, every 3 seconds the bat does a random attack or just nothing
         attackDelay += Time.deltaTime;
 
-        if (attackDelay >= 4)
+        if (attackDelay >= 4 && attack == 0)
         {
             attack = Random.Range(1, 100);
-            attackDelay = 0;
+        }
+
+        if (attackDelay >= 4 && attackDelay <= 5 && attack <= 97)
+        {
+            flyUp.y += Time.deltaTime;
         }
 
         //Old code
