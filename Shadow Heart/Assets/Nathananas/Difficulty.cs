@@ -51,5 +51,5 @@ public class Difficulty : MonoBehaviour
             print(difficultyname[p]);
             p++;
         }
-    } //Heaven 0, too easy 1, easy 2, normal 3, hard 4, very hard 5, extreme 6, chaos 7, impossible 8, apocalypse 9, nightmare 10, hell 11, Wakanda forever! 12
+    } //Heaven 0, too easy 1, easy 2, normal 3, hard 4, very hard 5, extreme 6, chaos 7, impossible 8, apocalypse 9, nightmare 10, hell 11, Death 12
 }
