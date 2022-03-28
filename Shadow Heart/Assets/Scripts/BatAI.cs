@@ -39,8 +39,9 @@ public class BatAI : MonoBehaviour
     void Start()
     {
         attack = 0;
-        NavMeshAgent agent = spawner.GetComponent<NavMeshAgent>();
+        NavMeshAgent agent = bat.GetComponent<NavMeshAgent>();
         agent.speed = speedBat;
+        goal = spawner.GetComponent<Spawner>().player;
     }
 
     // Update is called once per frame
@@ -124,7 +125,7 @@ public class BatAI : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
         {
-                GetComponent<Transform>().position += flyUp;
+            GetComponent<Rigidbody>().velocity = flyUp;
         }
 
         //hp
