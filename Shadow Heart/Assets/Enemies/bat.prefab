@@ -398,7 +398,7 @@ MonoBehaviour:
   targetDirection: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   idleRotation: {x: 0, y: 0, z: 0}
-  idleMovement: {x: 0, y: 0, z: 0}
+  idleMovement: {x: 0, y: 0, z: 0.5}
   speedBat: 8
   rotationSpeed: 6
   hitSpeed: 16

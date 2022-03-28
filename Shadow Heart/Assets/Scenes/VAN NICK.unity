@@ -206,7 +206,7 @@ MonoBehaviour:
   newBat: {fileID: 5029298131676344712, guid: fb50b8feac8e0ae42a452c0c090d4f97, type: 3}
   spawner: {fileID: 27876580}
   player: {fileID: 4456146612377579516}
-  pos: {x: 500, y: 5, z: 550}
+  pos: {x: 500, y: 50, z: 550}
 --- !u!1 &46282065
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456146612377579504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 500, y: 3.831, z: 500}
+  m_LocalPosition: {x: 500, y: 4.662, z: 500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -39,9 +39,9 @@ public class BatAI : MonoBehaviour
     void Start()
     {
         attack = 0;
-        NavMeshAgent agent = spawner.GetComponent<NavMeshAgent>();
+        NavMeshAgent agent = bat.GetComponent<NavMeshAgent>();
         agent.speed = speedBat;
-        goal = GetComponent<Spawner>().player;
+        goal = spawner.GetComponent<Spawner>().player;
     }
 
     // Update is called once per frame
