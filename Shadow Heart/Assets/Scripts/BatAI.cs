@@ -9,13 +9,15 @@ public class BatAI : MonoBehaviour
 
     public GameObject bat;
     public GameObject newBat;
+    public GameObject spawner;
 
     public Vector3 pos;
     public Vector3 flyUp;
     public Vector3 targetDirection;
     public Vector3 direction;
+    public Vector3 idleRotation;
+    public Vector3 idleMovement;
 
-    public RaycastHit inRange;
     public RaycastHit fly;
 
     public float speedBat;
@@ -24,16 +26,21 @@ public class BatAI : MonoBehaviour
     public float hitDuration;
     public float attackDelay;
     public float attackRange;
+    public float idleTimer;
+    public float damageDealt;
+    public float hpBat;
 
     public int attack;
-    public int damageDealt;
+
+    public bool hasIdleRotation;
+    public bool hpHasBeenSet;
 
     // Start is called before the first frame update
     void Start()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.speed = speedBat;
         attack = 0;
+        NavMeshAgent agent = spawner.GetComponent<NavMeshAgent>();
+        agent.speed = speedBat;
     }
 
     // Update is called once per frame
@@ -41,14 +48,38 @@ public class BatAI : MonoBehaviour
     {
         //navigation, this makes the bat move towards the player
         targetDirection = goal.position - transform.position;
-        direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(direction);
         pos = transform.position;
         float distance = Vector3.Distance(transform.position, goal.position);
         if (distance < attackRange)
         {
+            direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             agent.destination = goal.position;
+        }
+        else
+        {
+            //idle, makes the bat move in random directions
+            idleTimer += Time.deltaTime;
+            if (idleTimer >= 2)
+            {
+                if (hasIdleRotation == false)
+                {
+                    idleRotation.y = Random.Range(-rotationSpeed, rotationSpeed);
+                    hasIdleRotation = true;
+                }
+                else
+                {
+                    transform.Rotate(idleRotation / 12);
+                }
+            }
+
+            if (idleTimer >= 3)
+            {
+                idleTimer = 0;
+                hasIdleRotation = false;
+            }
+            GetComponent<Transform>().Translate(idleMovement * Time.deltaTime * speedBat);
         }
 
         //attack, every 3 seconds the bat does a random attack or just nothing
@@ -56,7 +87,15 @@ public class BatAI : MonoBehaviour
 
         if (attackDelay >= 4 && attack == 0)
         {
-            attack = Random.Range(1, 100);
+            if (distance < attackRange)
+            {
+                attack = Random.Range(1, 100);
+            }
+            else
+            {
+                attack = 0;
+                attackDelay = 0;
+            }
         }
 
         if (attackDelay >= 4 && attackDelay <= 5 && attack <= 97)
@@ -83,58 +122,24 @@ public class BatAI : MonoBehaviour
             attack = 0;
         }
 
-        //Old code
-        //    if (attackDelay >= 0.7f)
-        //    {
-        //        attack = 0;
-        //    }
-
-        //    if (attackDelay >= 3)
-        //    {
-        //        attack = Random.Range(0, 99);
-        //        attackDelay = 0;
-        //    }
-
-        //    if (attack <= 20)
-        //    {
-        //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        //        agent.speed = speedBat;
-        //    }
-
-        //    if (attack >= 21 && attack <= 96)
-        //    {
-        //        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        //        agent.speed = hitSpeed;
-        //    }
-
-        //    if (attack >= 97)
-        //    {
-        //        for (int i = 0; i < 1; i++)
-        //        {
-        //            Instantiate(newBat, pos, Quaternion.identity);
-        //            attack = 0;
-        //        }
-        //    }
-
         if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
         {
                 GetComponent<Transform>().position += flyUp;
         }
 
-    //private void OnCollisionEnter(Collision playerHit)
-    //{
-    //    if (playerHit.gameObject.tag == "Player")
-    //    {
-    //        damageDealt = 7;
-    //    }
-    //}
+        //hp
+        if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
+        {
+            hpHasBeenSet = true;
+            hpBat = spawner.GetComponent<Difficulty>().hp;
+        }
     }
 
     private void OnCollisionEnter(Collision playerHit)
     {
         if (playerHit.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5)
         {
-            damageDealt = 7;
+            damageDealt = spawner.GetComponent<Difficulty>().dmg / 2;
         }
     }
 }
