@@ -7,6 +7,9 @@ public class Spawner : MonoBehaviour
     public float spawnDelay;
 
     public GameObject newBat;
+    public GameObject spawner;
+
+    public Transform player;
 
     public Vector3 pos;
 
@@ -50,7 +53,8 @@ public class Spawner : MonoBehaviour
             {
                 pos.z += Random.Range(-20, 20);
             }
-            Instantiate(newBat, pos, Quaternion.identity);
+            GameObject bat = Instantiate(newBat, pos, Quaternion.identity);
+            bat.GetComponent<BatAI>().spawner = spawner;
         }
     }
 }
