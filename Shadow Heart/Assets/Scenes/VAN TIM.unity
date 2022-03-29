@@ -529,6 +529,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1323286850}
     m_Modifications:
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: lengthInSec
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: ShapeModule.type
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: ShapeModule.arc.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853112324695237, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6473853112324695238, guid: fe4295dcaffb9fa4497ca837850bbff1, type: 3}
       propertyPath: m_Name
       value: rookje wolk
