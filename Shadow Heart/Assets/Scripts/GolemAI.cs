@@ -7,15 +7,32 @@ public class GolemAI : MonoBehaviour
 {
     public Transform goal;
 
+    public GameObject spawner;
+    public GameObject rock;
+
     public Vector3 pos;
+    public Vector3 rockPos;
     public Vector3 targetDirection;
     public Vector3 direction;
+    public Vector3 idleRotation;
+    public Vector3 idleMovement;
 
     public RaycastHit inRange;
 
     public float speedGolem;
     public float rotationSpeed;
     public float attackRange;
+    public float idleTimer;
+    public float hpGolem;
+    public float attackTimer;
+    public float nearPlayer;
+    public float delayAttack101;
+
+    public int attack;
+
+    public bool hasIdleRotation;
+    public bool hpHasBeenSet;
+    public bool rockHasSpawned;
 
     // Start is called before the first frame update
     void Start()
@@ -27,17 +44,78 @@ public class GolemAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //navigation, this makes the bat move towards the player
         targetDirection = goal.position - transform.position;
-        direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(direction);
         pos = transform.position;
-        if (Physics.Raycast(transform.position, transform.forward, out inRange, attackRange))
+        float distance = Vector3.Distance(transform.position, goal.position);
+        if (distance < attackRange && attackTimer <= 4)
         {
-            if (inRange.transform.tag == "Player")
+            direction = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(direction);
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.destination = goal.position;
+        }
+        else
+        {
+            //idle, makes the bat move in random directions
+            idleTimer += Time.deltaTime;
+            if (idleTimer >= 2)
             {
-                NavMeshAgent agent = GetComponent<NavMeshAgent>();
-                agent.destination = goal.position;
+                if (hasIdleRotation == false)
+                {
+                    idleRotation.y = Random.Range(-rotationSpeed, rotationSpeed);
+                    hasIdleRotation = true;
+                }
+                else
+                {
+                    transform.Rotate(idleRotation / 12);
+                }
             }
+
+            if (idleTimer >= 3)
+            {
+                idleTimer = 0;
+                hasIdleRotation = false;
+            }
+            GetComponent<Transform>().Translate(idleMovement * Time.deltaTime * speedGolem);
+        }
+
+        //attacks
+        attackTimer += Time.deltaTime;
+
+        if (attackTimer >= 4 && distance <= attackRange)
+        {
+            if (distance < nearPlayer)
+            {
+                attack = Random.Range(1, 100);
+            }
+            else
+            {
+                attack = 101;
+                speedGolem = 0;
+                NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                agent.speed = speedGolem;
+                delayAttack101 += Time.deltaTime;
+                if (delayAttack101 >= 0.5f && rockHasSpawned == false)
+                {
+                    rockPos.x = pos.x;
+                    rockPos.y = pos.y;
+                    rockPos.z = pos.z + 0.5f;
+                    Instantiate(rock, rockPos, Quaternion.identity);
+                    rockHasSpawned = true;
+                }
+            }
+        }
+        else if (attackTimer >= 4 && distance >= attackRange)
+        {
+            attackTimer = 0;
+        }
+
+        //hp
+        if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
+        {
+            hpHasBeenSet = true;
+            hpGolem = spawner.GetComponent<Difficulty>().hp;
         }
     }
 }
