@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 8b38889a962741a488df2a7b853d9a3a
   - enabled: 1
-    path: Assets/Scenes/VAN TISH.unity
-    guid: 4827b56eeea7e4e459ca0ed144afa682
+    path: Assets/Scenes/terrain scene.unity
+    guid: 52c6c62571d8bd541babcb439b08e590
   - enabled: 1
     path: Assets/AndereUnity/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 0
+    path: Assets/Scenes/VAN TISH.unity
+    guid: 4827b56eeea7e4e459ca0ed144afa682
   m_configObjects: {}

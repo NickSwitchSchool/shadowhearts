@@ -14,7 +14,8 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinLobby();
+        PhotonNetwork.JoinLobby(Photon.Realtime.TypedLobby.Default);
+        Debug.Log("Connected");
     }
 
     public override void OnJoinedLobby()
