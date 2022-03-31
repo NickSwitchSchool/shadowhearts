@@ -6,20 +6,19 @@ using UnityEngine;
 
 public class SpawnPlayers : MonoBehaviour
 {
-    public GameObject playerPrefab;
-    public GameObject camPlayer;
+    public GameObject playerAndCamPrefab;
 
     public float minX;
     public float maxX;
-    public float minZ;
-    public float maxZ;
     public float minY;
     public float maxY;
-    private void Start()
-    {
-        Vector3 randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minZ, maxZ), Random.Range(minY, maxY));
+    public float minZ;
+    public float maxZ;
 
-        PhotonNetwork.Instantiate(playerPrefab.name, randomPos, Quaternion.identity);
-        PhotonNetwork.Instantiate(camPlayer.name, randomPos, Quaternion.identity);
+    public void onButtonClick()
+    {
+        Vector3 randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
+
+        PhotonNetwork.Instantiate(playerAndCamPrefab.name, randomPos, Quaternion.identity);
     }
 }
