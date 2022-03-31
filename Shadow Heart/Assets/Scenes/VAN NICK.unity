@@ -419,16 +419,19 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   idleRotation: {x: 0, y: 0, z: 0}
   idleMovement: {x: 0, y: 0, z: 0.5}
+  rockMovement: {x: 0, y: 0, z: 0}
   speedGolem: 4
   rotationSpeed: 3
   attackRange: 25
   idleTimer: 0
   hpGolem: 0
   attackTimer: 0
-  nearPlayer: 0
+  nearPlayer: 3
+  delayAttack101: 0
   attack: 0
   hasIdleRotation: 0
   hpHasBeenSet: 0
+  rockHasSpawned: 0
 --- !u!195 &1671873466
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -465,7 +468,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!65 &1671873468
 BoxCollider:
@@ -750,7 +753,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!4 &4456146612377579516
 Transform:
