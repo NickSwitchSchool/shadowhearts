@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0066fc1d1874b4496aa5cb2b8fc565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  dmg: 0
+  hp: 1
+  dmg: 1
   timeLeft: 60
   factor: 0.2
   difficultyMeter: 0
@@ -694,6 +694,7 @@ GameObject:
   - component: {fileID: 4456146612377579505}
   - component: {fileID: 4456146612377579514}
   - component: {fileID: 4456146612377579506}
+  - component: {fileID: 4456146612377579507}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -739,6 +740,19 @@ MonoBehaviour:
   cam: {fileID: 4456146611863252236}
   h: 0
   v: 0
+--- !u!114 &4456146612377579507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456146612377579504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92943373da90661489845dfdaade54df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!54 &4456146612377579514
 Rigidbody:
   m_ObjectHideFlags: 0

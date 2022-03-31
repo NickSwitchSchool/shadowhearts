@@ -35,10 +35,10 @@ public class Rock : MonoBehaviour
             isTrown = true;
         }
 
-        //if(GetComponent<Rigidbody>().velocity == new Vector3())
-        //{
-        //    canDealDamage = false;
-        //}
+        if(GetComponent<Rigidbody>().velocity == new Vector3())
+        {
+            canDealDamage = false;
+        }
     }
 
     private void OnCollisionEnter(Collision playerHit)
