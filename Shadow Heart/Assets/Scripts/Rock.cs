@@ -6,13 +6,19 @@ public class Rock : MonoBehaviour
 {
     public Transform player;
 
+    public GameObject spawner;
+
     public Vector3 beingTrown;
+
     public bool isTrown;
+    public bool canDealDamage;
+
+    public float damageDealt;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        canDealDamage = true;
     }
 
     // Update is called once per frame
@@ -27,6 +33,21 @@ public class Rock : MonoBehaviour
             Vector3 direction = player.transform.position - transform.position;
             GetComponent<Rigidbody>().velocity = direction * Random.Range(2f , 3.6f);
             isTrown = true;
+        }
+
+        //if(GetComponent<Rigidbody>().velocity == new Vector3())
+        //{
+        //    canDealDamage = false;
+        //}
+    }
+
+    private void OnCollisionEnter(Collision playerHit)
+    {
+        if (playerHit.gameObject.tag == "Player" && canDealDamage == true)
+        {
+            damageDealt = spawner.GetComponent<Difficulty>().dmg * 12;
+            player.GetComponent<HealtPoints>().hp -= damageDealt;
+            canDealDamage = false;
         }
     }
 }

@@ -41,8 +41,8 @@ public class Difficulty : MonoBehaviour
     private void MoreDifficult()
     {
         print("Difficulty Changed");
-        hp += factor * x;
-        dmg += factor * x;
+        hp += (factor * x) + 1;
+        dmg += (factor * x) + 1;
 
         x++;
         if(difficultyMeter < 13)

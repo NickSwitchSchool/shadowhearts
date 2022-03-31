@@ -34,6 +34,7 @@ public class BatAI : MonoBehaviour
 
     public bool hasIdleRotation;
     public bool hpHasBeenSet;
+    public bool damageDone;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +97,7 @@ public class BatAI : MonoBehaviour
             {
                 attack = 0;
                 attackDelay = 0;
+                damageDone = false;
             }
         }
 
@@ -138,10 +140,11 @@ public class BatAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision playerHit)
     {
-        if (playerHit.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5)
+        if (playerHit.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5 && damageDone == false)
         {
-            damageDealt = spawner.GetComponent<Difficulty>().dmg / 2;
+            damageDealt = spawner.GetComponent<Difficulty>().dmg * 7;
             goal.GetComponent<HealtPoints>().hp -= damageDealt;
+            damageDone = true;
         }
     }
 }

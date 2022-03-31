@@ -104,6 +104,7 @@ public class GolemAI : MonoBehaviour
                     rockPos.z = pos.z;
                     GameObject newRock = Instantiate(rock, rockPos, Quaternion.identity);
                     newRock.GetComponent<Rock>().player = goal;
+                    newRock.GetComponent<Rock>().spawner = spawner;
                     rockHasSpawned = true;
                 }
 
