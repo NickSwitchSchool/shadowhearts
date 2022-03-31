@@ -16,6 +16,7 @@ public class GolemAI : MonoBehaviour
     public Vector3 direction;
     public Vector3 idleRotation;
     public Vector3 idleMovement;
+    public Vector3 rockMovement;
 
     public RaycastHit inRange;
 
@@ -99,10 +100,18 @@ public class GolemAI : MonoBehaviour
                 if (delayAttack101 >= 0.5f && rockHasSpawned == false)
                 {
                     rockPos.x = pos.x;
-                    rockPos.y = pos.y;
-                    rockPos.z = pos.z + 0.5f;
-                    Instantiate(rock, rockPos, Quaternion.identity);
+                    rockPos.y = pos.y + 1.5f;
+                    rockPos.z = pos.z;
+                    GameObject newRock = Instantiate(rock, rockPos, Quaternion.identity);
+                    newRock.GetComponent<Rock>().player = goal;
                     rockHasSpawned = true;
+                }
+
+                if (rockHasSpawned == true)
+                {
+                    attack = 0;
+                    attackTimer = 0;
+                    rockHasSpawned = false;
                 }
             }
         }
