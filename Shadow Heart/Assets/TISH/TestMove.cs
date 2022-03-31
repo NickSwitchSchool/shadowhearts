@@ -60,57 +60,58 @@ public class TestMove : MonoBehaviour
             CamRotation.z = 0f;
 
             transform.rotation = Quaternion.Lerp(transform.rotation, CamRotation, 0.1f);
-        }
-        if (input == false && stamina <= 100)
-        {
-            stamina += Time.deltaTime;
-        }
 
-        if (grounded == true && stamina >= 0)
-        {
-            if (Input.GetButtonDown("Sprint"))
+            if (input == false && stamina <= 100)
             {
-                input = true;
-                moveVelocity += 8;
-                if (moveVelocity >= 15)
+                stamina += Time.deltaTime;
+            }
+
+            if (grounded == true && stamina >= 0)
+            {
+                if (Input.GetButtonDown("Sprint"))
                 {
-                    stamina -= Time.deltaTime;
+                    input = true;
+                    moveVelocity += 8;
+                    if (moveVelocity >= 15)
+                    {
+                        stamina -= Time.deltaTime;
+                    }
+                }
+
+                if (Input.GetButtonUp("Sprint"))
+                {
+                    input = false;
+                    moveVelocity -= 8;
                 }
             }
 
-            if (Input.GetButtonUp("Sprint"))
+            if (grounded == true && stamina >= 15)
             {
-                input = false;
-                moveVelocity -= 8;
+                if (Input.GetButtonDown("Jumping"))
+                {
+                    input = true;
+                    stamina -= 15;
+                    playerRb.AddForce(Vector3.up * jumpHeight);
+                    grounded = false;
+                }
+                else
+                {
+                    input = false;
+                }
             }
-        }
 
-        if (grounded == true && stamina >= 15)
-        {
-            if (Input.GetButtonDown("Jumping"))
+            if (grounded == true && stamina >= 20)
             {
-                input = true;
-                stamina -= 15;
-                playerRb.AddForce(Vector3.up * jumpHeight);
-                grounded = false;
-            }
-            else
-            {
-                input = false;
-            }
-        }
-
-        if (grounded == true && stamina >= 20)
-        {
-            if (Input.GetButtonDown("Dodge"))
-            {
-                input = true;
-                stamina -= 20;
-                playerRb.AddForce(transform.forward * dodgePower);
-            }
-            else
-            {
-                input = false;
+                if (Input.GetButtonDown("Dodge"))
+                {
+                    input = true;
+                    stamina -= 20;
+                    playerRb.AddForce(transform.forward * dodgePower);
+                }
+                else
+                {
+                    input = false;
+                }
             }
         }
     }
