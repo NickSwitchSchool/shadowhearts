@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealtPoints : MonoBehaviour
 {
-    public int hp;
+    public float hp;
 
     // Update is called once per frame
     void Update()

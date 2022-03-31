@@ -141,6 +141,7 @@ public class BatAI : MonoBehaviour
         if (playerHit.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5)
         {
             damageDealt = spawner.GetComponent<Difficulty>().dmg / 2;
+            goal.GetComponent<HealtPoints>().hp -= damageDealt;
         }
     }
 }
