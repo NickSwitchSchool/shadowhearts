@@ -411,6 +411,7 @@ MonoBehaviour:
   attack: 0
   hasIdleRotation: 0
   hpHasBeenSet: 0
+  damageDone: 0
 --- !u!54 &5259492785120627515
 Rigidbody:
   m_ObjectHideFlags: 0
