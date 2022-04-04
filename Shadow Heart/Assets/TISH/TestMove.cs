@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class TestMove : MonoBehaviour
+public class TestMove : MonoBehaviourPunCallbacks
 {
     public float moveVelocity;
     public float dodgePower;
