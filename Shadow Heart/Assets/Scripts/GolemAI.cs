@@ -38,8 +38,10 @@ public class GolemAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attack = 0;
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.speed = speedGolem;
+        goal = spawner.GetComponent<Spawner>().player;
     }
 
     // Update is called once per frame

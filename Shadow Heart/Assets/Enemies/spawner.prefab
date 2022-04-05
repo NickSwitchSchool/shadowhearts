@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6629865112166812430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6629865112166812428}
+  - component: {fileID: 6629865112166812431}
+  - component: {fileID: 6629865112166812429}
+  m_Layer: 0
+  m_Name: spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6629865112166812428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629865112166812430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 95.18012, y: 1.5173666, z: 92.86912}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6629865112166812431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629865112166812430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0066fc1d1874b4496aa5cb2b8fc565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  dmg: 1
+  timeLeft: 60
+  factor: 0.2
+  difficultyMeter: 0
+  x: 1
+  q: 60
+  difficultyname:
+  - Heaven
+  - too easy
+  - easy
+  - normal
+  - hard
+  - very hard
+  - extreme
+  - choas
+  - impossible
+  - apocalypse
+  - nightmare
+  - hell
+  - death
+  p: 0
+  cooldown: {fileID: 0}
+--- !u!114 &6629865112166812429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629865112166812430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd4a13ca9bdeff4eb89baccd2ba0c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDelayBat: 0
+  spawnDelayGolem: 0
+  newBat: {fileID: 5029298131676344712, guid: fb50b8feac8e0ae42a452c0c090d4f97, type: 3}
+  newGolem: {fileID: 0}
+  spawner: {fileID: 6629865112166812430}
+  player: {fileID: 0}
+  pos: {x: 500, y: 50, z: 550}
