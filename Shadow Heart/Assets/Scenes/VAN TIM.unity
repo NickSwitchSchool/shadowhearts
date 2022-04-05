@@ -757,6 +757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning trail
       objectReference: {fileID: 0}
+    - target: {fileID: 3125936718211829464, guid: 90cdc0993b0b1a34a9acaf37e40cb525, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90cdc0993b0b1a34a9acaf37e40cb525, type: 3}
 --- !u!1001 &5859733784298649893
