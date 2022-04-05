@@ -244,6 +244,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4574856914493832829}
   - component: {fileID: 634331921974498561}
+  - component: {fileID: 8920813518791097905}
+  - component: {fileID: 4178098185623553362}
   m_Layer: 0
   m_Name: golemPlaceHolder
   m_TagString: Untagged
@@ -301,6 +303,44 @@ MonoBehaviour:
   hasIdleRotation: 0
   hpHasBeenSet: 0
   rockHasSpawned: 0
+--- !u!54 &8920813518791097905
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762467821512336583}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!195 &4178098185623553362
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762467821512336583}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4353443417614663030
 GameObject:
   m_ObjectHideFlags: 0

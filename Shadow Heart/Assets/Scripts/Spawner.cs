@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         spawnDelayBat += Time.deltaTime;
+        spawnDelayGolem += Time.deltaTime;
 
         if (spawnDelayBat >= 15 - GetComponent<Difficulty>().difficultyMeter)
         {
