@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4456146611482555056}
   - component: {fileID: 4456146611482555071}
   - component: {fileID: 4456146611482555060}
-  - component: {fileID: 121882303586327815}
-  - component: {fileID: 8188675016903938512}
+  - component: {fileID: 8323672495807742354}
+  - component: {fileID: 609190754115821316}
+  - component: {fileID: 5657469136571597023}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -115,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &121882303586327815
+--- !u!114 &8323672495807742354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,56 +125,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 4456146611482555070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7c856608448c641902f64b8f3e4db6, type: 3}
+  m_Script: {fileID: 11500000, guid: 92943373da90661489845dfdaade54df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+--- !u!114 &609190754115821316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456146611482555070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837f7583ace47f84bac3037d75ee30cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doDamage: 0
+--- !u!114 &5657469136571597023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456146611482555070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27453b8fc9187c94896cd201a2b506a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveVelocity: 0
   dodgePower: 0
   timer: 0
-  playerRb: {fileID: 4456146611482555060}
+  stamina: 0
+  input: 0
+  pluur: {fileID: 0}
+  playerRb: {fileID: 0}
   grounded: 0
-  jumpHeight: 300
---- !u!114 &8188675016903938512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4456146611482555070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boost: 3.5
-  positionLerpTime: 0.2
-  mouseSensitivity: 60
-  mouseSensitivityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 5
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 2.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  rotationLerpTime: 0.01
-  invertY: 0
+  jumpHeight: 0
+  speed: 0
+  cam: {fileID: 0}
+  h: 0
+  v: 0
 --- !u!1 &4456146612053504079
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +179,7 @@ GameObject:
   - component: {fileID: 4456146612053504065}
   - component: {fileID: 4456146612053504064}
   - component: {fileID: 4456146612053504067}
+  - component: {fileID: 6294259389760253334}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -291,3 +285,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &6294259389760253334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456146612053504079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e05487387a09c43b60c5614ddd814a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAt: {fileID: 4456146611482555058}
+  Player: {fileID: 4456146611482555058}
+  distance: 8
+  sensivity: 4
