@@ -159,7 +159,7 @@ public class GolemAI : MonoBehaviour
         if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
         {
             hpHasBeenSet = true;
-            GetComponent<enemyHPscript>().enemyHP = spawner.GetComponent<Difficulty>().hp * 20;
+            GetComponent<enemyHPscript>().enemyHP = 50 + spawner.GetComponent<Difficulty>().hp * 5;
         }
 
         if (GetComponent<enemyHPscript>().enemyHP <= 0 && hpHasBeenSet == true)
