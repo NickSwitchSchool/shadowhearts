@@ -6,6 +6,15 @@ ModelImporter:
   - first:
       74: 2264077025236624520
     second: Armature.001|Armature.001Action
+  - first:
+      74: 4860719799852238033
+    second: Armature.001|Armature.Attack
+  - first:
+      74: 9182948093315712663
+    second: Armature.001|Armature.Attack.001
+  - first:
+      74: -6186459027832044687
+    second: Armature.001|Armature.Idle
   externalObjects: {}
   materials:
     materialImportMode: 2
