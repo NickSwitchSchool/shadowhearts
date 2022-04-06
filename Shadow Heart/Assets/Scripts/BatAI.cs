@@ -116,16 +116,13 @@ public class BatAI : MonoBehaviour
 
         if (attackDelay >= 7 && attack <= 97)
         {
-            attackDelay = 0;
-            attack = 0;
-            damageDealt = 0;
+            attackDone();
         }
 
         if (attackDelay >= 4 && attack >= 98)
         {
             Instantiate(newBat, pos, Quaternion.identity);
-            attackDelay = 0;
-            attack = 0;
+            attackDone();
         }
 
         if (Physics.Raycast(transform.position, Vector3.down, out fly, 10) && attackDelay >= 5)
@@ -154,5 +151,12 @@ public class BatAI : MonoBehaviour
             goal.GetComponent<HealtPoints>().hp -= damageDealt;
             damageDone = true;
         }
+    }
+
+    void attackDone()
+    {
+        damageDone = false;
+        attackDelay = 0;
+        attack = 0;
     }
 }

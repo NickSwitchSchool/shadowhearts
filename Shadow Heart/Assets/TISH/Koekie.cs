@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Koekie : MonoBehaviour
 {
-    private const float YMin = -60.0f;
-    private const float YMax = 60.0f;
+    private const float YMin = -20.0f;
+    private const float YMax = 20.0f;
 
     public Transform lookAt;
 

@@ -302,14 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078992588c35f2e448f285a33459c1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftRight: 0
-  forwardBackward: 0
-  moveSpeed: 10
-  fps: 0
-  deathMessage: 
-  alive: 0
-  pos: {x: 0, y: 0, z: 0}
-  respawnPos: {x: 0, y: 0, z: 0}
+  movementX: 0
+  movementZ: 0
+  movespeed: 8
+  movement: {x: 0, y: 0, z: 0}
+  cam: {fileID: 1199239728}
 --- !u!1001 &676043384
 PrefabInstance:
   m_ObjectHideFlags: 0
