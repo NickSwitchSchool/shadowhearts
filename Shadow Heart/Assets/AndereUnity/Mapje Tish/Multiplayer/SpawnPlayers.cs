@@ -7,7 +7,8 @@ using UnityEngine;
 public class SpawnPlayers : MonoBehaviourPunCallbacks
 {
     public GameObject playerAndCamPrefab;
-    public GameObject spawningPlayer;   
+
+    public int clickedOnce;
 
     public float minX;
     public float maxX;
@@ -16,35 +17,28 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     public float minZ;
     public float maxZ;
 
-    public float howMany;
-
-    public string[] players = { "player1", "player2", "player3", "player4" };
-
-    public void Start()
+    private void Start()
     {
-        howMany = 0;
+        Vector3 randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
+        PhotonNetwork.Instantiate(playerAndCamPrefab.name, randomPos, Quaternion.identity);
     }
 
-    public void onButtonClick()  
+    public void Update()
     {
-        foreach(string i in players)
+        if (Input.GetButtonDown("Fire1"))
         {
-            print("player spawned");
-            if (howMany == 5)
+            clickedOnce = 1;
+            if (clickedOnce == 1)
             {
-                print("Lobby is full!");
+                photonView.gameObject.SetActive(true);
+
+                Cursor.lockState = CursorLockMode.Locked;
             }
-
-            howMany += 0.25f;
         }
-                
-        if(howMany >= 4)
+
+        if (Input.GetButtonDown("Cancel"))
         {
-            Vector3 randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
-
-            PhotonNetwork.Instantiate(playerAndCamPrefab.name, randomPos, Quaternion.identity);
-
-            //spawningPlayer.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
