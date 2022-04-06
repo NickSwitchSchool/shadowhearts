@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - WaitForSpawn
+  - Enemy
   layers:
   - Default
   - TransparentFX

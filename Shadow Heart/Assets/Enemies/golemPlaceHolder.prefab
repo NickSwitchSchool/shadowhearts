@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 2482208193709534542}
   m_Layer: 0
   m_Name: golemPlaceHolder
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,10 +300,12 @@ MonoBehaviour:
   attackTimer: 0
   nearPlayer: 0
   delayAttack101: 0
+  damageDealt: 0
   attack: 0
   hasIdleRotation: 0
   hpHasBeenSet: 0
   rockHasSpawned: 0
+  damageDone: 0
 --- !u!54 &8920813518791097905
 Rigidbody:
   m_ObjectHideFlags: 0
