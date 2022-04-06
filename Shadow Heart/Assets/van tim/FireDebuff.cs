@@ -19,7 +19,7 @@ public class FireDebuff : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<enemyHPscript>().enemyHP -= 1;
+            other.gameObject.GetComponent<enemyHPscript>().onFire = true;
         }
     }
 }
