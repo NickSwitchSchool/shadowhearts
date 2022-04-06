@@ -127,7 +127,12 @@ public class GolemAI : MonoBehaviour
         if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
         {
             hpHasBeenSet = true;
-            hpGolem = spawner.GetComponent<Difficulty>().hp;
+            hpGolem = spawner.GetComponent<Difficulty>().hp * 10;
+        }
+
+        if (hpGolem <= 0 && hpHasBeenSet == true)
+        {
+            print("bat died");
         }
     }
 }

@@ -59,7 +59,7 @@ public class Spawner : MonoBehaviour
             GameObject bat = Instantiate(newBat, pos, Quaternion.identity);
             bat.GetComponent<BatAI>().spawner = spawner;
 
-            if (spawnDelayGolem >= 60 - GetComponent<Difficulty>().difficultyMeter && GetComponent<Difficulty>().difficultyMeter >= 4)
+            if (spawnDelayGolem >= 60 - GetComponent<Difficulty>().difficultyMeter && GetComponent<Difficulty>().difficultyMeter >= 5)
             {
                 spawnDelayGolem = 0;
                 if (pos.x <= 200f)
