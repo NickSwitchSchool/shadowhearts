@@ -9,10 +9,10 @@ public class DamageOnCollisionPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.gameObject.GetComponent<BatAI>() -= 10
-        }
+        
+
+
+
     }
 
     // Update is called once per frame
