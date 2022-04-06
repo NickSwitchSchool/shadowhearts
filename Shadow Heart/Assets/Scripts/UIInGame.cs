@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class UIInGame : MonoBehaviour
 {
     public GameObject player;
+    public GameObject hpbar;
 
-    public Text closestEnemy;
+    public Vector2 hpbarScale;
+    public Vector2 hpbarPosition;
 
-    public float distance;
+    public bool rightSide;
+    public bool onBottem;
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +23,32 @@ public class UIInGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = 2000;
-        var objects = GameObject.FindGameObjectsWithTag("Enemy");
-        var objectCount = objects.Length;
-        foreach (var obj in objects)
+        hpbarScale.y = 100;
+        hpbarScale.x = player.GetComponent<HealtPoints>().hp * 8;
+        hpbar.GetComponent<RectTransform>().sizeDelta = hpbarScale;
+        if (rightSide == false)
         {
-            if (Vector3.Distance(obj.GetComponent<Transform>().position, player.GetComponent<Transform>().position) <= distance)
+            hpbarPosition.x = 67 + player.GetComponent<HealtPoints>().hp * 1.585f;
+            if (onBottem == false)
             {
-                distance = Vector3.Distance(transform.position, player.GetComponent<Transform>().position);
+
+            }
+            else
+            {
+                hpbarPosition.y = 40;
             }
         }
-        closestEnemy.text = "closest enemy: " + distance.ToString();
+        else
+        {
+            if (onBottem == false)
+            {
+
+            }
+            else
+            {
+                hpbarPosition.y = 40;
+            }
+        }
+        hpbar.GetComponent<RectTransform>().anchoredPosition = hpbarPosition;
     }
 }
