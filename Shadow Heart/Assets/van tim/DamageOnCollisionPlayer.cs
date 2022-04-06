@@ -5,8 +5,7 @@ using UnityEngine;
 public class DamageOnCollisionPlayer : MonoBehaviour
 {
     public int damage;
-
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -14,5 +13,4 @@ public class DamageOnCollisionPlayer : MonoBehaviour
             other.gameObject.GetComponent<enemyHPscript>().enemyHP -= damage;
         }
     }
-
 }

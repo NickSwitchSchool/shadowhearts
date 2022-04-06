@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyHPscript : MonoBehaviour
+public class FireDebuff : MonoBehaviour
 {
-    public float enemyHP;
-    public bool onFire;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +14,12 @@ public class enemyHPscript : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<enemyHPscript>().enemyHP -= 1;
+        }
     }
 }

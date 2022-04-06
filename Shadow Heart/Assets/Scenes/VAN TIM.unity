@@ -644,6 +644,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 349019712822712998, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: damage
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 582827224669913609, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
       propertyPath: m_Name
       value: irythill greatsword
@@ -705,6 +709,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 948739218581302157, guid: 3a837f6c36f26bf49a0090c0e7dbd80e, type: 3}
+      propertyPath: damage
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a837f6c36f26bf49a0090c0e7dbd80e, type: 3}
 --- !u!1001 &2194398311445209012
@@ -762,6 +770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2194398311243460029, guid: 7d401f15aa508da4bbf3894a84e5dd7a, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d401f15aa508da4bbf3894a84e5dd7a, type: 3}
 --- !u!1001 &2649263349882597148
@@ -814,6 +826,10 @@ PrefabInstance:
     - target: {fileID: 2544159438215456326, guid: 33762cbac545c3f4c86089af52e7fd00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649263349970230256, guid: 33762cbac545c3f4c86089af52e7fd00, type: 3}
+      propertyPath: damage
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2883846561358052604, guid: 33762cbac545c3f4c86089af52e7fd00, type: 3}
       propertyPath: m_Name
@@ -888,6 +904,10 @@ PrefabInstance:
     - target: {fileID: 3834815906065280665, guid: 60b1927d9c765f54d8da03a0f4a56f3c, type: 3}
       propertyPath: m_Name
       value: frost sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177486052463706897, guid: 60b1927d9c765f54d8da03a0f4a56f3c, type: 3}
+      propertyPath: damage
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4500169233480135715, guid: 60b1927d9c765f54d8da03a0f4a56f3c, type: 3}
       propertyPath: m_RootOrder
