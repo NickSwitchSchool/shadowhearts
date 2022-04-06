@@ -4,7 +4,7 @@ using Photon.Pun;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SpawnPlayers : MonoBehaviour
+public class SpawnPlayers : MonoBehaviourPunCallbacks
 {
     public GameObject playerAndCamPrefab;
     public GameObject spawningPlayer;   
@@ -16,12 +16,35 @@ public class SpawnPlayers : MonoBehaviour
     public float minZ;
     public float maxZ;
 
-    public void onButtonClick()
+    public float howMany;
+
+    public string[] players = { "player1", "player2", "player3", "player4" };
+
+    public void Start()
     {
-        Vector3 randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
+        howMany = 0;
+    }
 
-        PhotonNetwork.Instantiate(playerAndCamPrefab.name, randomPos, Quaternion.identity);
+    public void onButtonClick()  
+    {
+        foreach(string i in players)
+        {
+            print("player spawned");
+            if (howMany == 5)
+            {
+                print("Lobby is full!");
+            }
 
-        spawningPlayer.SetActive(false);
+            howMany += 0.25f;
+        }
+                
+        if(howMany >= 4)
+        {
+            Vector3 randomPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
+
+            PhotonNetwork.Instantiate(playerAndCamPrefab.name, randomPos, Quaternion.identity);
+
+            //spawningPlayer.SetActive(false);
+        }
     }
 }
