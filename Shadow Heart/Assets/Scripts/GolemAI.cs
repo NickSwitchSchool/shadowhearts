@@ -18,7 +18,7 @@ public class GolemAI : MonoBehaviour
     public Vector3 idleMovement;
     public Vector3 rockMovement;
 
-    public RaycastHit inRange;
+    public RaycastHit hit;
 
     public float speedGolem;
     public float rotationSpeed;
@@ -28,12 +28,14 @@ public class GolemAI : MonoBehaviour
     public float attackTimer;
     public float nearPlayer;
     public float delayAttack101;
+    public float damageDealt;
 
     public int attack;
 
     public bool hasIdleRotation;
     public bool hpHasBeenSet;
     public bool rockHasSpawned;
+    public bool damageDone;
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +93,36 @@ public class GolemAI : MonoBehaviour
             if (distance < nearPlayer)
             {
                 attack = Random.Range(1, 100);
+                speedGolem = 0;
+                NavMeshAgent agent = GetComponent<NavMeshAgent>();
+                agent.speed = speedGolem;
+                if (attack >= 1 && attack <= 50)
+                {
+                    if (Physics.Raycast(transform.position, Vector3.forward, out hit, 2))
+                    {
+                        damageDealt = spawner.GetComponent<Difficulty>().dmg * 10;
+                        goal.GetComponent<HealtPoints>().hp -= damageDealt;
+                        damageDone = true;
+                    }
+                }
+                else if (attack >= 51 && attack <= 80)
+                {
+                    if (Physics.Raycast(transform.position, Vector3.forward, out hit, 1.5f))
+                    {
+                        damageDealt = spawner.GetComponent<Difficulty>().dmg * 12;
+                        goal.GetComponent<HealtPoints>().hp -= damageDealt;
+                        damageDone = true;
+                    }
+                }
+                else
+                {
+                    if (Physics.Raycast(transform.position, Vector3.forward, out hit, 2.5f))
+                    {
+                        damageDealt = spawner.GetComponent<Difficulty>().dmg * 20;
+                        goal.GetComponent<HealtPoints>().hp -= damageDealt;
+                        damageDone = true;
+                    }
+                }
             }
             else
             {
@@ -132,7 +164,18 @@ public class GolemAI : MonoBehaviour
 
         if (hpGolem <= 0 && hpHasBeenSet == true)
         {
-            print("bat died");
+            print("golem died");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player" && damageDone == false)
+        {
+            if (attack >= 1 && attack <= 40)
+            {
+                
+            }
         }
     }
 }
