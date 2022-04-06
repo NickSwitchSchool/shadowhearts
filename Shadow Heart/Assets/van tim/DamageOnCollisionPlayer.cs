@@ -6,7 +6,9 @@ public class DamageOnCollisionPlayer : MonoBehaviour
 {
     public int damage;
 
-    private void OnTriggerEnter(Collider other)
+
+    // Start is called before the first frame update
+    void Start()
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
