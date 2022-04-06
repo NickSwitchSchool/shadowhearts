@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: dcdb04457fdbe814daa3ccbc6ad87e4b, type: 2}
+--- !u!4 &285775288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+  m_PrefabInstance: {fileID: 1924849101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &503399021
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,9 +292,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 500, y: 100, z: 500}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 285775288}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &503399030
 MonoBehaviour:
@@ -355,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8287249708810960501, guid: 0c1b0f24ee8456a4985142d9dee866ec, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8287249708810960501, guid: 0c1b0f24ee8456a4985142d9dee866ec, type: 3}
       propertyPath: m_AnchorMax.x
@@ -495,7 +501,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881983376
 GameObject:
@@ -582,7 +588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6629865112166812428, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6629865112166812428, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -882,3 +888,64 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3196327159974054683, guid: 0c1b0f24ee8456a4985142d9dee866ec, type: 3}
   m_PrefabInstance: {fileID: 676043384}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1924849101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 503399029}
+    m_Modifications:
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7659912
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.060112
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01876831
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6963643
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.122787856
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6963643
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.122787856
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 242436718678038707, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 349019712822712998, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 582827224669913609, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
+      propertyPath: m_Name
+      value: irythill greatsword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83e0f8a927215d744a35eac768b9c95b, type: 3}
