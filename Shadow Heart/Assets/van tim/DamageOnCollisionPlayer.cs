@@ -8,7 +8,10 @@ public class DamageOnCollisionPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 
     // Update is called once per frame
