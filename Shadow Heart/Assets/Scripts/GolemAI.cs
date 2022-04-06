@@ -154,18 +154,6 @@ public class GolemAI : MonoBehaviour
         {
             attackTimer = 0;
         }
-
-        //hp
-        if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
-        {
-            hpHasBeenSet = true;
-            hpGolem = spawner.GetComponent<Difficulty>().hp * 10;
-        }
-
-        if (hpGolem <= 0 && hpHasBeenSet == true)
-        {
-            print("golem died");
-        }
     }
 
     private void OnCollisionEnter(Collision collision)

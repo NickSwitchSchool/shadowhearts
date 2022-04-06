@@ -19,6 +19,7 @@ public class BatAI : MonoBehaviour
     public Vector3 idleMovement;
 
     public RaycastHit fly;
+    public RaycastHit hit;
 
     public float speedBat;
     public float rotationSpeed;
@@ -130,6 +131,16 @@ public class BatAI : MonoBehaviour
             GetComponent<Rigidbody>().velocity = flyUp;
         }
 
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 0.5f))
+        {
+            if (hit.transform.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5 && damageDone == false)
+            {
+                damageDealt = spawner.GetComponent<Difficulty>().dmg * 7;
+                goal.GetComponent<HealtPoints>().hp -= damageDealt;
+                damageDone = true;
+            }
+        }
+
         //hp
         if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
         {
@@ -140,16 +151,6 @@ public class BatAI : MonoBehaviour
         if (hpBat <= 0 && hpHasBeenSet == true)
         {
             print("bat died");
-        }
-    }
-
-    private void OnCollisionEnter(Collision playerHit)
-    {
-        if (playerHit.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5 && damageDone == false)
-        {
-            damageDealt = spawner.GetComponent<Difficulty>().dmg * 7;
-            goal.GetComponent<HealtPoints>().hp -= damageDealt;
-            damageDone = true;
         }
     }
 
