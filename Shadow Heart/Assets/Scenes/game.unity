@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: dcdb04457fdbe814daa3ccbc6ad87e4b, type: 2}
 --- !u!1 &503399021
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503399021}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27453b8fc9187c94896cd201a2b506a3, type: 3}
   m_Name: 
@@ -613,6 +613,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6629865112166812429, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
+      propertyPath: pos.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629865112166812429, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
+      propertyPath: newBat
+      value: 
+      objectReference: {fileID: 5029298131676344712, guid: fb50b8feac8e0ae42a452c0c090d4f97, type: 3}
+    - target: {fileID: 6629865112166812429, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 503399029}
@@ -620,6 +628,10 @@ PrefabInstance:
       propertyPath: newGolem
       value: 
       objectReference: {fileID: 3762467821512336583, guid: 9376e752f04816a44b82ae2fb18771f1, type: 3}
+    - target: {fileID: 6629865112166812429, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
+      propertyPath: spawnerChecker
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6629865112166812430, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
       propertyPath: m_Name
       value: spawner

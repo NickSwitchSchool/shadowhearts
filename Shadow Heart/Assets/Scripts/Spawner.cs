@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class Spawner : MonoBehaviour
 
     public Transform player;
 
+    public NavMeshHit spawnY;
+
     public Vector3 pos;
+    public Vector3 newBatPos;
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +60,19 @@ public class Spawner : MonoBehaviour
             {
                 pos.z += Random.Range(-20, 20);
             }
-            GameObject bat = Instantiate(newBat, pos, Quaternion.identity);
-            bat.GetComponent<BatAI>().spawner = spawner;
+            GetComponent<Transform>().position = pos;
+
+            if (NavMesh.SamplePosition(pos, out spawnY, 500, 1))
+            {
+                newBatPos.x = pos.x;
+                newBatPos.z = pos.z;
+                newBatPos.y = spawnY.position.y;
+                GameObject bat = Instantiate(newBat, newBatPos, Quaternion.identity);
+                bat.GetComponent<BatAI>().spawner = spawner;
+            }
+
+            //GameObject bat = Instantiate(newBat, pos, Quaternion.identity);
+            //bat.GetComponent<BatAI>().spawner = spawner;
 
             if (spawnDelayGolem >= 60 - GetComponent<Difficulty>().difficultyMeter && GetComponent<Difficulty>().difficultyMeter >= 5)
             {

@@ -85,4 +85,4 @@ MonoBehaviour:
   newGolem: {fileID: 3762467821512336583, guid: 9376e752f04816a44b82ae2fb18771f1, type: 3}
   spawner: {fileID: 6629865112166812430}
   player: {fileID: 0}
-  pos: {x: 500, y: 50, z: 550}
+  pos: {x: 500, y: 30, z: 550}
