@@ -105,14 +105,14 @@ public class BatAI : MonoBehaviour
             }
         }
 
-        if (attackDelay >= 4 && attackDelay <= 5 && attack <= 97)
+        if (attackDelay >= 4 && attackDelay <= 6 && attack <= 97)
         {
-            flyUp.y += Time.deltaTime;
+            GetComponent<NavMeshAgent>().baseOffset += Time.deltaTime / 2;
         }
 
-        if (attackDelay >= 5 && attackDelay <= 7 && attack <= 97)
+        if (attackDelay >= 6 && attackDelay <= 7 && attack <= 97)
         {
-            flyUp.y -= Time.deltaTime / 2;
+            GetComponent<NavMeshAgent>().baseOffset -= Time.deltaTime;
         }
 
         if (attackDelay >= 7 && attack <= 97)
@@ -126,14 +126,9 @@ public class BatAI : MonoBehaviour
             attackDone();
         }
 
-        if (Physics.Raycast(transform.position, Vector3.down, out fly, 10) && attackDelay >= 5)
-        {
-            GetComponent<Rigidbody>().velocity = flyUp;
-        }
-
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, 0.5f))
         {
-            if (hit.transform.gameObject.tag == "Player" && attack <= 97 && attackDelay >= 5 && damageDone == false)
+            if (hit.transform.gameObject.tag == "Player" && damageDone == false)
             {
                 damageDealt = spawner.GetComponent<Difficulty>().dmg * 7;
                 goal.GetComponent<HealtPoints>().hp -= damageDealt;

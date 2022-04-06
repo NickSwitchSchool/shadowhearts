@@ -244,6 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4574856914493832829}
   - component: {fileID: 634331921974498561}
+  - component: {fileID: 6830690927673783392}
   - component: {fileID: 8920813518791097905}
   - component: {fileID: 4178098185623553362}
   - component: {fileID: 2482208193709534542}
@@ -306,6 +307,19 @@ MonoBehaviour:
   hpHasBeenSet: 0
   rockHasSpawned: 0
   damageDone: 0
+--- !u!114 &6830690927673783392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762467821512336583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ba5c3d264bc6b43a1c0f02c6a8f46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHP: 0
 --- !u!54 &8920813518791097905
 Rigidbody:
   m_ObjectHideFlags: 0
