@@ -136,6 +136,11 @@ public class BatAI : MonoBehaviour
             hpHasBeenSet = true;
             hpBat = spawner.GetComponent<Difficulty>().hp;
         }
+
+        if (hpBat <= 0 && hpHasBeenSet == true)
+        {
+            print("bat died");
+        }
     }
 
     private void OnCollisionEnter(Collision playerHit)

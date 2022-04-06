@@ -45,7 +45,7 @@ public class Rock : MonoBehaviour
     {
         if (playerHit.gameObject.tag == "Player" && canDealDamage == true)
         {
-            damageDealt = spawner.GetComponent<Difficulty>().dmg * 12;
+            damageDealt = spawner.GetComponent<Difficulty>().dmg * 17;
             player.GetComponent<HealtPoints>().hp -= damageDealt;
             canDealDamage = false;
         }

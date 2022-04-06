@@ -82,7 +82,7 @@ MonoBehaviour:
   spawnDelayBat: 0
   spawnDelayGolem: 0
   newBat: {fileID: 5029298131676344712, guid: fb50b8feac8e0ae42a452c0c090d4f97, type: 3}
-  newGolem: {fileID: 0}
+  newGolem: {fileID: 3762467821512336583, guid: 9376e752f04816a44b82ae2fb18771f1, type: 3}
   spawner: {fileID: 6629865112166812430}
   player: {fileID: 0}
   pos: {x: 500, y: 50, z: 550}
