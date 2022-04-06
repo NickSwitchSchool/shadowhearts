@@ -6,9 +6,7 @@ public class DamageOnCollisionPlayer : MonoBehaviour
 {
     public int damage;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
         
     }
