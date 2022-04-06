@@ -58,10 +58,13 @@ public class BatAI : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(direction);
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             agent.destination = goal.position;
+            agent.speed = speedBat;
         }
         else
         {
             //idle, makes the bat move in random directions
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.speed = 0;
             idleTimer += Time.deltaTime;
             if (idleTimer >= 2)
             {
@@ -125,7 +128,7 @@ public class BatAI : MonoBehaviour
             attack = 0;
         }
 
-        if (Physics.Raycast(transform.position, Vector3.down, out fly, 10))
+        if (Physics.Raycast(transform.position, Vector3.down, out fly, 10) && attackDelay >= 5)
         {
             GetComponent<Rigidbody>().velocity = flyUp;
         }
