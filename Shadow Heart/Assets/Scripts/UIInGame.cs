@@ -37,7 +37,7 @@ public class UIInGame : MonoBehaviour
             hpbarPosition.x = 67 + player.GetComponent<HealtPoints>().hp * 1.585f;
             if (onBottem == false)
             {
-
+                //later potential for modifying UI
             }
             else
             {
@@ -46,9 +46,10 @@ public class UIInGame : MonoBehaviour
         }
         else
         {
+            //later potential for modifying UI
             if (onBottem == false)
             {
-
+                //later potential for modifying UI
             }
             else
             {
