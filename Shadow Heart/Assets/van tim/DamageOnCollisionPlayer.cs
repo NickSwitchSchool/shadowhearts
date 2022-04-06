@@ -11,7 +11,7 @@ public class DamageOnCollisionPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<BatAI>() -= 10
         }
     }
 
