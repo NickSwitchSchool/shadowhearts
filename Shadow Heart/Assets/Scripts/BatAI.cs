@@ -145,12 +145,13 @@ public class BatAI : MonoBehaviour
         if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
         {
             hpHasBeenSet = true;
-            hpBat = spawner.GetComponent<Difficulty>().hp;
+            GetComponent<enemyHPscript>().enemyHP = spawner.GetComponent<Difficulty>().hp * 7;
         }
 
-        if (hpBat <= 0 && hpHasBeenSet == true)
+        if (GetComponent<enemyHPscript>().enemyHP <= 0 && hpHasBeenSet == true)
         {
             print("bat died");
+            Destroy(gameObject);
         }
     }
 
