@@ -140,7 +140,7 @@ public class BatAI : MonoBehaviour
         if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
         {
             hpHasBeenSet = true;
-            GetComponent<enemyHPscript>().enemyHP = spawner.GetComponent<Difficulty>().hp * 7;
+            GetComponent<enemyHPscript>().enemyHP = 20 + spawner.GetComponent<Difficulty>().hp * 1.2f;
         }
 
         if (GetComponent<enemyHPscript>().enemyHP <= 0 && hpHasBeenSet == true)
