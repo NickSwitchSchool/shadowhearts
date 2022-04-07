@@ -446,7 +446,10 @@ MonoBehaviour:
   timeOnFire: 0
   onFire: 0
   particlesExist: 0
-  fireParticles: {fileID: 0}
+  fireParticles: {fileID: 2525115041379807506, guid: 13669c610643eb146bb9d0cbaec0925e, type: 3}
+  distanceToClosestSword: 0
+  swords: []
+  targetSword: {fileID: 0}
 --- !u!195 &756995046650603763
 NavMeshAgent:
   m_ObjectHideFlags: 0

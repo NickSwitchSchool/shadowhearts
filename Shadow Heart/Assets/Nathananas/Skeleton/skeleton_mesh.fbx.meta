@@ -15,6 +15,12 @@ ModelImporter:
   - first:
       74: -6186459027832044687
     second: Armature.001|Armature.Idle
+  - first:
+      74: 5241115834652921113
+    second: Armature.001|Armature.Walking
+  - first:
+      74: -4105692874811414497
+    second: Armature.001|Armature.Walking.001
   externalObjects: {}
   materials:
     materialImportMode: 2

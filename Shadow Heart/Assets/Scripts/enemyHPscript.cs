@@ -65,16 +65,16 @@ public class enemyHPscript : MonoBehaviour
                 targetSword = sword;
             }
         }
-        if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true && targetSword.tag == "Sword")
+        if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true && targetSword.GetComponent<Transform>().tag == "Sword")
         {
             enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
             targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
         }
-        else if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true && targetSword.tag == "FireSword")
+        else if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true && targetSword.GetComponent<Transform>().tag == "FireSword")
         {
+            onFire = true;
             enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
             targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
-            onFire = true;
         }
 
     }
