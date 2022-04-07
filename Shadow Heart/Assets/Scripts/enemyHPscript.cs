@@ -55,10 +55,26 @@ public class enemyHPscript : MonoBehaviour
                 targetSword = sword;
             }
         }
-        if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true)
+        swords = GameObject.FindGameObjectsWithTag("FireSword");
+        foreach (GameObject sword in swords)
+        {
+            float distance = Vector3.Distance(sword.GetComponent<Transform>().position, GetComponent<Transform>().position);
+            if (distance <= distanceToClosestSword)
+            {
+                distanceToClosestSword = distance;
+                targetSword = sword;
+            }
+        }
+        if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true && targetSword.tag == "Sword")
         {
             enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
             targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
+        }
+        else if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true && targetSword.tag == "FireSword")
+        {
+            enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
+            targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
+            onFire = true;
         }
 
     }
