@@ -13,6 +13,7 @@ public class enemyHPscript : MonoBehaviour
     public float distanceToClosestSword;
     public GameObject[] swords;
     public GameObject targetSword;
+    public GameObject blood;
 
 
     // Update is called once per frame
@@ -70,12 +71,14 @@ public class enemyHPscript : MonoBehaviour
         {
             enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
             targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
+            Instantiate(blood, gameObject.transform.position, Quaternion.identity);
         }
         else if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true && targetSword.GetComponent<Transform>().tag == "FireSword")
         {
             onFire = true;
             enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
             targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
+            Instantiate(blood, gameObject.transform.position, Quaternion.identity);
         }
 
     }

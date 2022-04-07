@@ -7,6 +7,7 @@ public class DamageOnCollisionPlayer : MonoBehaviour
     public int damage;
     public bool isAttacking;
     public float damageDelay;
+    public Vector3 rotation;
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -20,6 +21,7 @@ public class DamageOnCollisionPlayer : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
+
             damageDelay += Time.deltaTime;
             if (damageDelay >= 1)
             {

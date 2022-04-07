@@ -320,6 +320,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 0
+  fireTick: 0
+  timeOnFire: 0
+  onFire: 0
+  particlesExist: 0
+  fireParticles: {fileID: 0}
+  distanceToClosestSword: 0
+  swords: []
+  targetSword: {fileID: 0}
+  blood: {fileID: 3240609183201334262, guid: 79dfdf41bba0826489f717589b2ca720, type: 3}
 --- !u!54 &8920813518791097905
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -219,6 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  isAttacking: 0
+  damageDelay: 0
 --- !u!114 &88296232395296643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +307,10 @@ MonoBehaviour:
   onFire: 0
   particlesExist: 0
   fireParticles: {fileID: 0}
+  distanceToClosestSword: 0
+  swords: []
+  targetSword: {fileID: 0}
+  blood: {fileID: 3240609183201334262, guid: 79dfdf41bba0826489f717589b2ca720, type: 3}
 --- !u!114 &88296232500116559
 MonoBehaviour:
   m_ObjectHideFlags: 0
