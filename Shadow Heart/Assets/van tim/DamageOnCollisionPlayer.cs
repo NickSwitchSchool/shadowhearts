@@ -5,14 +5,26 @@ using UnityEngine;
 public class DamageOnCollisionPlayer : MonoBehaviour
 {
     public int damage;
-    
-    private void OnTriggerEnter(Collider other)
+    public bool isAttacking;
+    public float damageDelay;
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Enemy"))
+    //    {
+    //        other.gameObject.GetComponent<enemyHPscript>().enemyHP -= damage;
+    //    }
+    //}
+
+    private void Update()
     {
-        if (Input.GetButtonDown("fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            if (other.gameObject.CompareTag("Enemy"))
+            damageDelay += Time.deltaTime;
+            if (damageDelay >= 1)
             {
-                other.gameObject.GetComponent<enemyHPscript>().enemyHP -= damage;
+                damageDelay = 0;
+                isAttacking = true;
             }
         }
     }

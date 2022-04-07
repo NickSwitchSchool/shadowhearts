@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8677474229951606097}
   m_Layer: 0
   m_Name: botw travellers sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  isAttacking: 0
+  damageDelay: 0
 --- !u!114 &6693424429617059809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
+  skeleton: {fileID: 0}
 --- !u!65 &8677474229951606097
 BoxCollider:
   m_ObjectHideFlags: 0

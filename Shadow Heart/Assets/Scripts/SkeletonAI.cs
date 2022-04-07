@@ -6,12 +6,11 @@ public class SkeletonAI : MonoBehaviour
 {
     public Transform goal;
 
-    public int attack;
-
     public float speedSkeleton;
     public float idleTimer;
     public float rotationSpeed;
     public float attackRange;
+    public float attackDelay;
 
     public Vector3 direction;
     public Vector3 targetDirection;
@@ -29,7 +28,7 @@ public class SkeletonAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attack = 0;
+        isAttacking = false;
         UnityEngine.AI.NavMeshAgent agent = skeleton.GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.speed = speedSkeleton;
         goal = spawner.GetComponent<Spawner>().player;
@@ -76,7 +75,23 @@ public class SkeletonAI : MonoBehaviour
             }
             GetComponent<Transform>().Translate(idleMovement * Time.deltaTime * speedSkeleton);
         }
-        
+
+        //attack
+        if (distance < attackRange)
+        {
+            attackDelay += Time.deltaTime;
+
+            if (attackDelay >= 1)
+            {
+                attackDelay = 0;
+                isAttacking = true;
+            }
+        }
+        else
+        {
+            attackDelay = 0;
+        }
+
         //hp
         if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
         {

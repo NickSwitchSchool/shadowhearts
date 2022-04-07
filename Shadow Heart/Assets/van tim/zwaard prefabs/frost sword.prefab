@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3986289447404260483}
   m_Layer: 0
   m_Name: frost sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  isAttacking: 0
+  damageDelay: 0
 --- !u!65 &3986289447404260483
 BoxCollider:
   m_ObjectHideFlags: 0

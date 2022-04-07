@@ -8,6 +8,7 @@ TagManager:
   - WaitForSpawn
   - Enemy
   - Chest
+  - Sword
   layers:
   - Default
   - TransparentFX

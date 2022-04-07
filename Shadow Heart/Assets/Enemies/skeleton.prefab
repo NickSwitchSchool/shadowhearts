@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
+  skeleton: {fileID: 88296232500116556}
 --- !u!1 &88296232500116556
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +300,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 0
+  fireTick: 0
+  timeOnFire: 0
   onFire: 0
+  particlesExist: 0
+  fireParticles: {fileID: 0}
 --- !u!114 &88296232500116559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,17 +318,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
-  attack: 0
-  speedSkeleton: 0
+  speedSkeleton: 16
   idleTimer: 0
-  rotationSpeed: 0
-  attackRange: 0
+  rotationSpeed: 8
+  attackRange: 50
+  attackDelay: 0
   direction: {x: 0, y: 0, z: 0}
   targetDirection: {x: 0, y: 0, z: 0}
   pos: {x: 0, y: 0, z: 0}
   idleRotation: {x: 0, y: 0, z: 0}
   idleMovement: {x: 0, y: 0, z: 0}
   hasIdleRotation: 0
+  hpHasBeenSet: 0
+  isAttacking: 0
   skeleton: {fileID: 88296232500116556}
   spawner: {fileID: 0}
 --- !u!195 &88296232500116558

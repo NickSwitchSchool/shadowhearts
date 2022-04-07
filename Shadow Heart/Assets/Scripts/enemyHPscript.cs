@@ -10,6 +10,9 @@ public class enemyHPscript : MonoBehaviour
     public bool onFire;
     public bool particlesExist;
     public GameObject fireParticles;
+    public float distanceToClosestSword;
+    public GameObject[] swords;
+    public GameObject targetSword;
 
 
     // Update is called once per frame
@@ -40,8 +43,23 @@ public class enemyHPscript : MonoBehaviour
                 fireTick = 0;
             }
         }
-        else
+
+        distanceToClosestSword = 1234567890;
+        swords = GameObject.FindGameObjectsWithTag("Sword");
+        foreach (GameObject sword in swords)
         {
+            float distance = Vector3.Distance(sword.GetComponent<Transform>().position, GetComponent<Transform>().position);
+            if (distance <= distanceToClosestSword)
+            {
+                distanceToClosestSword = distance;
+                targetSword = sword;
+            }
         }
+        if (distanceToClosestSword <= 3)
+        {
+            enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
+            targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
+        }
+
     }
 }
