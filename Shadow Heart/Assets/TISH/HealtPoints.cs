@@ -6,8 +6,7 @@ public class HealtPoints : MonoBehaviour
 {
     public float hp;
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
         
     }
