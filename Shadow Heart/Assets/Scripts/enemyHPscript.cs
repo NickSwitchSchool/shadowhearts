@@ -55,7 +55,7 @@ public class enemyHPscript : MonoBehaviour
                 targetSword = sword;
             }
         }
-        if (distanceToClosestSword <= 3)
+        if (distanceToClosestSword <= 3 && targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking == true)
         {
             enemyHP -= targetSword.GetComponent<DamageOnCollisionPlayer>().damage;
             targetSword.GetComponent<DamageOnCollisionPlayer>().isAttacking = false;
