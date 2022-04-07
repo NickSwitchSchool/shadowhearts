@@ -11,7 +11,7 @@ public class HealtPoints : MonoBehaviour
     {
         if (hp <= 0)
         {
-
+            SceneManager.LoadScene(sceneName: "gameOver");
         }
     }
 }
