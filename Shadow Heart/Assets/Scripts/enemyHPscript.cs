@@ -21,6 +21,7 @@ public class enemyHPscript : MonoBehaviour
         if (onFire == true && particlesExist == false)
         {
             GameObject clone = (GameObject)Instantiate(fireParticles, GetComponent<Transform>().position, Quaternion.identity);
+            clone.transform.parent = gameObject.transform;
             Destroy(clone, 8.0f);
             particlesExist = true;
         }
