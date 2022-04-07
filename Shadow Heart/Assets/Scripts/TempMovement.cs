@@ -13,6 +13,12 @@ public class TempMovement : MonoBehaviour
 
     public Transform cam;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -20,10 +26,7 @@ public class TempMovement : MonoBehaviour
         movementZ = -Input.GetAxis("Vertical");
         movement.x = movementX;
         movement.z = movementZ;
-
-        transform.Translate(movement * Time.deltaTime * movespeed);
-
-
+        GetComponent<Transform>().Translate(movement * Time.deltaTime * movespeed);
         direction.x = cam.GetComponent<Transform>().position.x;
         direction.z = cam.GetComponent<Transform>().position.z;
         direction.y = transform.position.y;
