@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4095994713084413005}
   - component: {fileID: 3393023462283007848}
   - component: {fileID: 6693424429617059809}
+  - component: {fileID: 8677474229951606097}
   m_Layer: 0
   m_Name: botw travellers sword
   m_TagString: Untagged
@@ -109,3 +110,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
+--- !u!65 &8677474229951606097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2582560456118494616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1934994, z: 1}
+  m_Center: {x: -0.00017572753, y: 0.49493974, z: -0.0000000018626451}

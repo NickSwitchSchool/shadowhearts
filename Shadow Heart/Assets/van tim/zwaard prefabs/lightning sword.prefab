@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1873120168097049839}
   - component: {fileID: 3337575565472588618}
   - component: {fileID: 699610464691459968}
-  - component: {fileID: 2194398311243460028}
   - component: {fileID: 2194398311243460029}
+  - component: {fileID: 4770401821832351730}
   m_Layer: 0
   m_Name: lightning sword
   m_TagString: Untagged
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2194398311243460028
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348116098712286805}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.10477814
-  m_Height: 1.0709383
-  m_Direction: 1
-  m_Center: {x: 0.0043900907, y: 0.44681156, z: 0.0034860596}
 --- !u!114 &2194398311243460029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +97,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+--- !u!65 &4770401821832351730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348116098712286805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0457017, z: 1}
+  m_Center: {x: 0, y: 0.43419328, z: -9.313226e-10}
 --- !u!1001 &4077350238392668480
 PrefabInstance:
   m_ObjectHideFlags: 0

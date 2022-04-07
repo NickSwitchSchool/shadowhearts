@@ -5,11 +5,15 @@ using UnityEngine;
 public class DamageOnCollisionEnemy : MonoBehaviour
 {
     public int damage;
+    public GameObject skeleton;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (skeleton.GetComponent<SkeletonAI>().isAttacking == true)
         {
-            other.gameObject.GetComponent<HealtPoints>().hp -= damage;
+            if (other.gameObject.CompareTag("Player"))
+            {
+                other.gameObject.GetComponent<HealtPoints>().hp -= damage;
+            }
         }
     }
 }

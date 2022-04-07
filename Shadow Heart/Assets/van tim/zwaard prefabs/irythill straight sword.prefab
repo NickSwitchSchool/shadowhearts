@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2544159438215456326}
   - component: {fileID: 1504606976498543075}
   - component: {fileID: 3676493496314092841}
-  - component: {fileID: 2649263349970230263}
   - component: {fileID: 2649263349970230256}
+  - component: {fileID: -265768011084808381}
   m_Layer: 0
   m_Name: irythill straight sword
   m_TagString: Untagged
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2649263349970230263
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2883846561358052604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.175
-  m_Height: 1.4384552
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.562807, z: 0}
 --- !u!114 &2649263349970230256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
+--- !u!65 &-265768011084808381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883846561358052604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.4384552, z: 1}
+  m_Center: {x: 0, y: 0.562807, z: 0}

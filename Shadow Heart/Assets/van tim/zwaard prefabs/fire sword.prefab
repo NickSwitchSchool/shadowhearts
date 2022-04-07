@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 765647360832458287}
   - component: {fileID: 4400012036645142922}
   - component: {fileID: 1939658270012454208}
-  - component: {fileID: 948739218581302163}
   - component: {fileID: 948739218581302157}
+  - component: {fileID: 6580507401838750016}
   m_Layer: 0
   m_Name: fire sword
   m_TagString: Untagged
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &948739218581302163
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138468763402114197}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.10546596
-  m_Height: 1.1413298
-  m_Direction: 1
-  m_Center: {x: -0.001217112, y: 0.47354245, z: 0}
 --- !u!114 &948739218581302157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +97,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 18
+--- !u!65 &6580507401838750016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138468763402114197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1173507, z: 1}
+  m_Center: {x: 0, y: 0.46155292, z: 0}
 --- !u!1001 &5836834143598028450
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ public class SkeletonAI : MonoBehaviour
     public Vector3 idleMovement;
 
     public bool hasIdleRotation;
+    public bool hpHasBeenSet;
+    public bool isAttacking;
 
     public GameObject skeleton;
     public GameObject spawner;
@@ -73,6 +75,19 @@ public class SkeletonAI : MonoBehaviour
                 hasIdleRotation = false;
             }
             GetComponent<Transform>().Translate(idleMovement * Time.deltaTime * speedSkeleton);
+        }
+        
+        //hp
+        if (spawner.GetComponent<Difficulty>().hp != 0 && hpHasBeenSet == false)
+        {
+            hpHasBeenSet = true;
+            GetComponent<enemyHPscript>().enemyHP = 25 + spawner.GetComponent<Difficulty>().hp * 2.1f;
+        }
+
+        if (GetComponent<enemyHPscript>().enemyHP <= 0 && hpHasBeenSet == true)
+        {
+            print("skeleton died");
+            Destroy(gameObject);
         }
     }
 }

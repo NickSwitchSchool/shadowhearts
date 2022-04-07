@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4500169233480135715}
   - component: {fileID: 710455513128024966}
   - component: {fileID: 3330689892620848972}
-  - component: {fileID: 4177486052463706910}
   - component: {fileID: 4177486052463706897}
+  - component: {fileID: 3986289447404260483}
   m_Layer: 0
   m_Name: frost sword
   m_TagString: Untagged
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4177486052463706910
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3834815906065280665}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.090367675
-  m_Height: 1.2342384
-  m_Direction: 1
-  m_Center: {x: 0.003467083, y: 0.4505285, z: 0}
 --- !u!114 &4177486052463706897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +98,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+--- !u!65 &3986289447404260483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834815906065280665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1533053, z: 1}
+  m_Center: {x: 0, y: 0.47498098, z: 0}
 --- !u!1001 &423235030848838149
 PrefabInstance:
   m_ObjectHideFlags: 0

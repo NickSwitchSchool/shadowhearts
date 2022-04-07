@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 242436718678038707}
   - component: {fileID: 3815276194268436246}
   - component: {fileID: 1375394719962440668}
-  - component: {fileID: 349019712822712993}
   - component: {fileID: 349019712822712998}
+  - component: {fileID: 1699995862729713930}
   m_Layer: 0
   m_Name: irythill greatsword
   m_TagString: Untagged
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &349019712822712993
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582827224669913609}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.23317422
-  m_Height: 2.019321
-  m_Direction: 1
-  m_Center: {x: 0.00016157329, y: 0.76645225, z: 0}
 --- !u!114 &349019712822712998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 35
+--- !u!65 &1699995862729713930
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582827224669913609}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.019321, z: 1}
+  m_Center: {x: 0.00016157329, y: 0.76645225, z: 0}

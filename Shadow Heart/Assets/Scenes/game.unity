@@ -647,6 +647,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3762467821512336583, guid: 9376e752f04816a44b82ae2fb18771f1, type: 3}
     - target: {fileID: 6629865112166812429, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
+      propertyPath: newSkeleton
+      value: 
+      objectReference: {fileID: 88296232500116556, guid: 6be5aee817329534194e8ba5d3808983, type: 3}
+    - target: {fileID: 6629865112166812429, guid: 2581ac2352ad0c748b867f8d0557286a, type: 3}
       propertyPath: spawnerChecker
       value: 
       objectReference: {fileID: 0}
