@@ -312,6 +312,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5068b4ce8cbd03f43bdcbbc1f301a568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goal: {fileID: 0}
+  attack: 0
+  speedSkeleton: 0
+  idleTimer: 0
+  rotationSpeed: 0
+  attackRange: 0
+  direction: {x: 0, y: 0, z: 0}
+  targetDirection: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
+  idleRotation: {x: 0, y: 0, z: 0}
+  idleMovement: {x: 0, y: 0, z: 0}
+  hasIdleRotation: 0
+  skeleton: {fileID: 88296232500116556}
+  spawner: {fileID: 0}
 --- !u!195 &88296232500116558
 NavMeshAgent:
   m_ObjectHideFlags: 0

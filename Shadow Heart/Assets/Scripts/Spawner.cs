@@ -18,6 +18,7 @@ public class Spawner : MonoBehaviour
 
     public Vector3 pos;
     public Vector3 newBatPos;
+    public Vector3 newGolemPos;
 
     // Start is called before the first frame update
     void Start()
@@ -102,8 +103,17 @@ public class Spawner : MonoBehaviour
                 {
                     pos.z += Random.Range(-20, 20);
                 }
-                GameObject golem = Instantiate(newGolem, pos, Quaternion.identity);
-                golem.GetComponent<GolemAI>().spawner = spawner;
+
+                GetComponent<Transform>().position = pos;
+
+                if (NavMesh.SamplePosition(pos, out spawnY, 500, 1))
+                {
+                    newGolemPos.x = pos.x;
+                    newGolemPos.z = pos.z;
+                    newGolemPos.y = spawnY.position.y;
+                    GameObject golem = Instantiate(newGolem, newGolemPos, Quaternion.identity);
+                    golem.GetComponent<GolemAI>().spawner = spawner;
+                }
             }
         }
     }
