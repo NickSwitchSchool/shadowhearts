@@ -69,6 +69,6 @@ public class UIInGame : MonoBehaviour
                 distanceToClosest = distance;
             }
         }
-        distanceIndicator.text = "Distance to closest enemie: " + Mathf.Round(distanceToClosest) + "m";
+        distanceIndicator.text = "Distance to closest enemy: " + Mathf.Round(distanceToClosest) + "m";
     }
 }
